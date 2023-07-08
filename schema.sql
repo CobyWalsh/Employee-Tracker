@@ -3,10 +3,25 @@ CREATE DATABASE employee_db;
 
 USE employee_db;
 
-CREATE TABLE Departments (
-  id INT NOT NULL,
-  course_title VARCHAR(30) NOT NULL,
-  course_description TEXT NOT NULL,
-  active BOOLEAN NOT NULL,
-  date_updated DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
+CREATE TABLE department (
+  id INT NOT NULL AUTO_INCREMENT,
+  department VARCHAR(45) NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE role (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(45) NULL,
+  salary DECIMAL(10.3) NULL,
+  department_id INT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE employee (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(45) NULL,
+  last_name VARCHAR(45) NULL,
+  role_id INT NULL,
+  manager_id INT NULL,
+  PRIMARY KEY (id)
 );
