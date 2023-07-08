@@ -19,6 +19,7 @@ function promptUser() {
           name: "text",
           choices: ["view all departments", "view all roles", "view all employees", "add a department", "add a role", "add an employee", "update an employee role"],
         }
+      
       ])
       .then((answers) => {
         // Error handling for text prompt (user must enter 3 characters or less for logo to generate)
