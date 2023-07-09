@@ -5,16 +5,14 @@ require('console.table');
 
 //mysql connection
 const connection = mysql2.createConnection({
-  host: '127.0.0.1',
+  host: "localhost",
  // Your port; if not 3001
   port: 3001,
-
-  // // Your username
-  // user: 'root',
-
+ // // Your username
+  user: "root@localhost",
   // // Your password
-  // password: 'PlacePassWordHere',
-  // database: 'employeesDB'
+  password: "G00fball#)",
+  database: "employees"
 });
 
 connection.connect(function (err) {
