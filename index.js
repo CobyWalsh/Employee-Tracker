@@ -5,9 +5,8 @@ require('console.table');
 
 //mysql connection
 const connection = mysql2.createConnection({
-  host: 'localhost',
-
-  // Your port; if not 3001
+  host: '127.0.0.1',
+ // Your port; if not 3001
   port: 3001,
 
   // // Your username
