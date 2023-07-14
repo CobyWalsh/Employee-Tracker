@@ -3,23 +3,26 @@ const fs = require("fs");
 const mysql2 = require("mysql2");
 require('console.table');
 
+console.log("before connection");
 //mysql connection
 const connection = mysql2.createConnection({
   host: "localhost",
- // Your port; if not 3001
-  port: 3006,
+ // Your port; if not 3306
+  port: 3306,
  // // Your username
   user: "root",
   // // Your password
-  password: "G00fball#)",
-  database: "employees"
+  password: "rootroot",
+  database: "employee_db"
 });
 
-connection.connect(function (err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId);
-  promptUser();
+console.log("connection worked");
+connection.query('select * from employee_db.employee', function (err, results) {
+  if (err) console.log(err);
+  console.log(results);
+  
 });
+
 
 function promptUser() {
     inquirer
@@ -51,8 +54,7 @@ function promptUser() {
   
           case "add a role":
             addRole();
-            break;
-  
+            break;  
           case "add an employee":
             addEmployee();
             break;
